@@ -18,17 +18,10 @@ jobs:
     - name: Checkout AWSDeploy repo
       uses: actions/checkout@v5
 
-    - name: Checkout Source Repo
-      uses: actions/checkout@v5
-      with:
-        repository: svelrajan/GithubActions
-        token: ${{ secrets.PAT_TOKEN }}
-        path: source
-
     # 🔍 Validate file exists
     - name: Verify index.html
       run: |
-        if [ ! -f iotdashboard-gh-pages/index.html ]; then
+        if [ ! -f index.html ]; then
           echo "index.html not found ❌"
           exit 1
         fi
