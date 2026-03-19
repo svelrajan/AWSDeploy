@@ -14,14 +14,14 @@ jobs:
       ECR_REPO: iot-dashboard
 
     steps:
-    # 🔽 Checkout SOURCE repo (GithubActions)
+    # 🔽 Checkout SOURCE repo (AWSDeploy and Github Actions)
     - name: Checkout AWSDeploy repo
       uses: actions/checkout@v5
 
     - name: Checkout Source Repo
       uses: actions/checkout@v5
       with:
-        repository: <your-username>/GithubActions
+        repository: svelrajan/GithubActions
         token: ${{ secrets.PAT_TOKEN }}
         path: .
 
