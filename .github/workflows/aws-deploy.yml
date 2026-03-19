@@ -23,7 +23,7 @@ jobs:
       with:
         repository: svelrajan/GithubActions
         token: ${{ secrets.PAT_TOKEN }}
-        path: .
+        path: source
 
     # 🔍 Validate file exists
     - name: Verify index.html
