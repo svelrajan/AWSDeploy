@@ -15,10 +15,13 @@ jobs:
 
     steps:
     # 🔽 Checkout SOURCE repo (GithubActions)
+    - name: Checkout AWSDeploy repo
+      uses: actions/checkout@v5
+
     - name: Checkout Source Repo
       uses: actions/checkout@v5
       with:
-        repository: svelrajan/GithubActions
+        repository: <your-username>/GithubActions
         token: ${{ secrets.PAT_TOKEN }}
         path: .
 
