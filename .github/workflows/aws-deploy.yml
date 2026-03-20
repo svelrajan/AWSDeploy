@@ -4,11 +4,7 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-    inputs:
-      resumeUrl:  # Must match n8n casing exactly
-        description: 'Resume URL'
-        required: true
-        type: string
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
