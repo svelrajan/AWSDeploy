@@ -69,3 +69,15 @@ jobs:
           docker stop iot-dashboard || true
           docker rm iot-dashboard || true
           docker run -d -p 80:80 --name iot-dashboard "$IMAGE"
+    # 🔔 Notify n8n of completion
+    - name: Callback to n8n
+      if: always() # Ensures this runs even if previous steps fail
+      run: |
+        curl -X POST "${{ secrets.N8N_WEBHOOK_URL }}" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "status": "${{ job.status }}",
+          "workflow": "${{ github.workflow }}",
+          "run_id": "${{ github.run_id }}",
+          "resumeUrl": "${{ github.event.inputs.resumeUrl }}"
+        }'
