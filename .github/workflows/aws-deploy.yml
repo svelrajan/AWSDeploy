@@ -4,7 +4,10 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
-
+    resumeUrl:
+      description: 'URL of the resume to process'
+      required: true
+      type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
