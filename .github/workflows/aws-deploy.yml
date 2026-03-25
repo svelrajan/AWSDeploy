@@ -4,6 +4,11 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+    inputs:
+      resumeUrl:
+        description: 'n8n resume URL for webhook callback after deployment'
+        required: false
+        type: string
 
 jobs:
   deploy:
